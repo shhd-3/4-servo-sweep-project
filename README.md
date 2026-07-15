@@ -34,6 +34,8 @@ The primary objective of this project is to implement a synchronized control seq
 *   Click the Start Simulation button.
 *   Observe: The four servos will begin a simultaneous sweeping motion.
 *   Verify: After exactly 2 seconds, the sweep motion will stop, and all four servo arms will rotate to and lock at 90°.
+*   https://github.com/user-attachments/assets/820b78b3-06cc-4c6a-8901-5e459171dba3
+*   
 
 ## Source Code
 ```cpp
