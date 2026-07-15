@@ -27,7 +27,8 @@ The primary objective of this project is to implement a synchronized control seq
 *   Click on the Code button in the Tinkercad top menu.
 *   Change the mode from "Blocks" to Text.
 *   Paste the source code below.
-*   <img width="1918" height="902" alt="Screenshot 2026-07-14 100601" src="https://github.com/user-attachments/assets/0eb5743b-35fb-466e-8233-aa407f59217c" />
+*   <img width="1918" height="908" alt="Screenshot 2026-07-15 111257" src="https://github.com/user-attachments/assets/a1a654c0-b153-4e7e-aa57-be4f38635046" />
+
 
 
 ### 3. Simulation & Validation
@@ -36,18 +37,14 @@ The primary objective of this project is to implement a synchronized control seq
 *   Verify: After exactly 2 seconds, the sweep motion will stop, and all four servo arms will rotate to and lock at 90°.
 
 
-https://github.com/user-attachments/assets/435a27ae-8d2f-4d2f-a68e-e4c87b306452
-
+https://github.com/user-attachments/assets/9546fc2b-95fa-450e-860e-6157b779fec5
 
 
 ## Source Code
 ```cpp
 #include <Servo.h>
 
-Servo servo1;
-Servo servo2;
-Servo servo3;
-Servo servo4;
+Servo servo1, servo2, servo3, servo4;
 
 void setup() {
   servo1.attach(2);
@@ -57,29 +54,23 @@ void setup() {
 
   unsigned long startTime = millis();
 
-  // Sweep for 2 seconds
+  // Sweep for exactly 2 seconds
   while (millis() - startTime < 2000) {
-
-    // 0° to 180°
-    for (int pos = 0; pos <= 180 && (millis() - startTime < 2000); pos++) {
-      servo1.write(pos);
-      servo2.write(pos);
-      servo3.write(pos);
-      servo4.write(pos);
-      delay(15);
+    // Wave Forward (0 to 180) - Fast
+    for (int pos = 0; pos <= 180; pos++) {
+      if (millis() - startTime >= 2000) break; 
+      servo1.write(pos); servo2.write(pos); servo3.write(pos); servo4.write(pos);
+      delay(3); // Fast wave
     }
-
-    // 180° to 0°
-    for (int pos = 180; pos >= 0 && (millis() - startTime < 2000); pos--) {
-      servo1.write(pos);
-      servo2.write(pos);
-      servo3.write(pos);
-      servo4.write(pos);
-      delay(15);
+    // Wave Backward (180 to 0) - Fast
+    for (int pos = 180; pos >= 0; pos--) {
+      if (millis() - startTime >= 2000) break; 
+      servo1.write(pos); servo2.write(pos); servo3.write(pos); servo4.write(pos);
+      delay(3); // Fast wave
     }
   }
 
-  // Hold all servos at 90°
+  // Hold all at 90°
   servo1.write(90);
   servo2.write(90);
   servo3.write(90);
@@ -87,5 +78,5 @@ void setup() {
 }
 
 void loop() {
-  // Keep the servos at 90°
-}
+  // Empty
+} 
