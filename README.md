@@ -40,6 +40,9 @@ The primary objective of this project is to implement a synchronized control seq
 https://github.com/user-attachments/assets/9546fc2b-95fa-450e-860e-6157b779fec5
 
 
+[Click here to view this design on Tinkercad](https://www.tinkercad.com/things/b4H6wQsLHw4-4-servo?sharecode=iRwtiLmeIR9-lNejATyzgb3IdhoRhiLt_escOztgBuk)
+
+
 ## Source Code
 ```cpp
 #include <Servo.h>
