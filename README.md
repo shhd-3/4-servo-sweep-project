@@ -10,6 +10,8 @@ The primary objective of this project is to implement a synchronized control seq
 
 ### 1. Circuit Assembly
 *   Place Components: Drag an Arduino Uno R3 and 4 Micro Servos onto the workplane.
+*   <img width="1918" height="907" alt="Screenshot 2026-07-15 102152" src="https://github.com/user-attachments/assets/1d202c26-b844-4e14-9302-d682655f0d76" />
+
 *   Power Connections:
     *   Connect the Red wire (Power) of all 4 servos directly to the 5V pin on the Arduino.
     *   Connect the Black wire (Ground) of all 4 servos directly to the GND pin on the Arduino.
@@ -18,11 +20,15 @@ The primary objective of this project is to implement a synchronized control seq
     *   Connect the signal wire of Servo 2 to Digital Pin 3.
     *   Connect the signal wire of Servo 3 to Digital Pin 4.
     *   Connect the signal wire of Servo 4 to Digital Pin 5.
+*   <img width="1911" height="911" alt="Screenshot 2026-07-15 102427" src="https://github.com/user-attachments/assets/c3395437-2340-4382-b3c3-29e4c1f74570" />
+
 
 ### 2. Programming
 *   Click on the Code button in the Tinkercad top menu.
 *   Change the mode from "Blocks" to Text.
 *   Paste the source code below.
+*   <img width="1918" height="902" alt="Screenshot 2026-07-14 100601" src="https://github.com/user-attachments/assets/0eb5743b-35fb-466e-8233-aa407f59217c" />
+
 
 ### 3. Simulation & Validation
 *   Click the Start Simulation button.
